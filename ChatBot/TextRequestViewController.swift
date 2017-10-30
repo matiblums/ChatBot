@@ -33,6 +33,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var miTabla: UITableView? = nil
     
     var mensajes: [String] = []
+    var mensajesCodigo: [Int] = []
     
     
     var keyboardSizeTotal = CGFloat(260.0)
@@ -177,15 +178,28 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellID = "Cell"
+        let cellID = "Cell0"
         
         let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
         
-        cell.txtMensaje.text = mensajes[indexPath.row]
-        
+        switch mensajesCodigo[indexPath.row] {
+        case 0:
+            let cellID = "Cell0"
+            
+            let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
+            cell.txtMensaje.text = mensajes[indexPath.row]
+            return cell
+        case 1:
+            let cellID = "Cell1"
+            
+            let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
+            cell.txtMensaje.text = mensajes[indexPath.row]
+            return cell
+        default:
+            break
+        }
         
         return cell
-        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -234,6 +248,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         self.mensajes.append(miMensaje!)
+        self.mensajesCodigo.append(1)
         
         subeScroll()
         
@@ -248,7 +263,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 
                 self?.mensajes.append(arrayID! as String)
-                
+                self?.mensajesCodigo.append(0)
                 // if let sself = self {
                 //  print(response.result.fulfillment?.speech)
                 
