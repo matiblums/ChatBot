@@ -75,8 +75,8 @@
 				587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */,
 				16B28E521FA797A00028F26F /* ContactosTableViewController.swift */,
 				587512381AC275280053EAA9 /* Main.storyboard */,
-				5875123B1AC275280053EAA9 /* Images.xcassets */,
 				5875123D1AC275280053EAA9 /* LaunchScreen.xib */,
+				5875123B1AC275280053EAA9 /* Images.xcassets */,
 				587512321AC275280053EAA9 /* Supporting Files */,
 			);
 			path = ChatBot;

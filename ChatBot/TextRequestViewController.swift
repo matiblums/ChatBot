@@ -77,10 +77,34 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             object: nil
         )
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHideForzado),
+            name: Notification.Name("ocultaTeclado"),
+            object: nil
+        )
+        
         self.lblHora.text = "últ. vez hoy a las 14:26"
         self.lblNombre.text = strNombre
         self.imgContacto.image = UIImage(named:strImagen)
         
+        self.viewTexto.frame.origin.y = self.view.frame.size.height - self.viewTexto.frame.size.height
+        self.miTabla?.frame.origin.y = 64
+        self.miTabla?.frame.size.height = self.view.frame.size.height - self.viewTexto.frame.size.height - 64
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil);
         
     }
     
@@ -97,14 +121,30 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func keyboardWillHide(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
+            //let keyboardRectangle = keyboardFrame.cgRectValue
+            //let keyboardHeight = keyboardRectangle.height
             
-            self.viewTexto.frame.origin.y += keyboardHeight
-            self.miTabla?.frame.size.height += keyboardHeight
+            //self.viewTexto.frame.origin.y += keyboardHeight
+            //self.miTabla?.frame.size.height += keyboardHeight
+            
+            self.viewTexto.frame.origin.y = self.view.frame.size.height - self.viewTexto.frame.size.height
+            self.miTabla?.frame.origin.y = 64
+            self.miTabla?.frame.size.height = self.view.frame.size.height - self.viewTexto.frame.size.height - 64
+            
             subeScroll()
         }
     }
+    
+    @objc func keyboardWillHideForzado(_ notification: Notification) {
+        view.endEditing(true)
+        //self.miTabla?.frame.size.height = self.view.frame.size.height - self.viewTexto.frame.size.height
+        //self.viewTexto.frame.origin.y = self.view.frame.size.height - self.viewTexto.frame.size.height
+        
+        //subeScroll()
+        
+        
+    }
+    
     /*
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -194,7 +234,6 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         self.mensajes.append(miMensaje!)
-        
         
         subeScroll()
         
