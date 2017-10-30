@@ -20,31 +20,92 @@ import AI
 class TextRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var lblNombre: UILabel!
+    @IBOutlet weak var lblHora: UILabel!
+    @IBOutlet weak var imgContacto: UIImageView!
+    
+    
     @IBOutlet weak var viewTexto: UIView!
     
     @IBOutlet weak var textField: UITextField!
     fileprivate var response: QueryResponse? = .none
-    @IBOutlet var lblDate: UILabel? = nil
     
     @IBOutlet var miTabla: UITableView? = nil
     
     var mensajes: [String] = []
     
+    
     var keyboardSizeTotal = CGFloat(260.0)
+    
+    var strNombre : String = ""
+    var strImagen : String = ""
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         //textField?.becomeFirstResponder()
         //self.lblDate?.text = "últ. vez hoy a las 21:37"
         
-        self.lblDate?.text = "en línea"
+        self.lblHora?.text = "en línea"
+        /*
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(TextRequestViewController.keyboardWillShow),
+            name: NSNotification.Name.UIKeyboardWillShow,
+            object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(TextRequestViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(TextRequestViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(TextRequestViewController.keyboardWillHide),
+            name: NSNotification.Name.UIKeyboardWillHide,
+            object: nil)
+        */
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: NSNotification.Name.UIKeyboardWillShow,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: NSNotification.Name.UIKeyboardWillHide,
+            object: nil
+        )
+        
+        self.lblHora.text = "últ. vez hoy a las 14:26"
+        self.lblNombre.text = strNombre
+        self.imgContacto.image = UIImage(named:strImagen)
+        
+        
     }
     
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            self.viewTexto.frame.origin.y -= keyboardHeight
+            self.miTabla?.frame.size.height -= keyboardHeight
+            subeScroll()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            self.viewTexto.frame.origin.y += keyboardHeight
+            self.miTabla?.frame.size.height += keyboardHeight
+            subeScroll()
+        }
+    }
+    /*
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             self.viewTexto.frame.origin.y -= keyboardSizeTotal
@@ -55,7 +116,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             //}
         }
     }
-    
+ 
     @objc func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             self.viewTexto.frame.origin.y += keyboardSizeTotal
@@ -65,8 +126,10 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
            //     self.view.frame.origin.y += keyboardSize.height
            // }
         }
+        
+       
     }
-    
+     */
     @IBAction func tocaEsconder(_ sender: Any) {
         print("toca")
         view.endEditing(true)
@@ -127,7 +190,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     func enviaMensaje(){
         let miMensaje = self.textField?.text
         self.textField?.text = ""
-        self.lblDate?.text = "escribiendo..."
+        self.lblHora?.text = "escribiendo..."
         
         
         self.mensajes.append(miMensaje!)
@@ -151,7 +214,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                 //  print(response.result.fulfillment?.speech)
                 
                 
-                self?.lblDate?.text = "en línea"
+                self?.lblHora?.text = "en línea"
                 //}
                 
                 self?.subeScroll()
