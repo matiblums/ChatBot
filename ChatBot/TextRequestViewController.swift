@@ -17,46 +17,144 @@
 import UIKit
 import AI
 
-class TextRequestViewController: UIViewController {
+class TextRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var viewTexto: UIView!
+    
     @IBOutlet weak var textField: UITextField!
     fileprivate var response: QueryResponse? = .none
-    @IBOutlet var lblRespuesta: UILabel? = nil
     @IBOutlet var lblDate: UILabel? = nil
+    
+    @IBOutlet var miTabla: UITableView? = nil
+    
+    var mensajes: [String] = []
+    
+    var keyboardSizeTotal = CGFloat(260.0)
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        textField?.becomeFirstResponder()
+        //textField?.becomeFirstResponder()
         //self.lblDate?.text = "últ. vez hoy a las 21:37"
         
         self.lblDate?.text = "en línea"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(TextRequestViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TextRequestViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.viewTexto.frame.origin.y -= keyboardSizeTotal
+            self.miTabla?.frame.size.height -= keyboardSizeTotal
+            subeScroll()
+            //if self.view.frame.origin.y == 0{
+              //  self.view.frame.origin.y -= keyboardSize.height
+            //}
+        }
+    }
     
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.viewTexto.frame.origin.y += keyboardSizeTotal
+            self.miTabla?.frame.size.height += keyboardSizeTotal
+            subeScroll()
+           // if self.view.frame.origin.y != 0{
+           //     self.view.frame.origin.y += keyboardSize.height
+           // }
+        }
+    }
+    
+    @IBAction func tocaEsconder(_ sender: Any) {
+        print("toca")
+        view.endEditing(true)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellID = "Cell"
+        
+        let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
+        
+        cell.txtMensaje.text = mensajes[indexPath.row]
+        
+        
+        return cell
+        
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        
+        return self.mensajes.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //NSLog("You selected cell number: \(indexPath.row)!")
+        //self.performSegue(withIdentifier: "yourIdentifier", sender: self)
+        //textField?.becomeFirstResponder()
+    }
     
     @IBAction func sendText(_ sender: UIButton)
     {
        
+        if(self.textField?.text != ""){
+            enviaMensaje()
+        }
         
-       // self.textField?.text = ""
-        self.lblRespuesta?.text = ""
+    }
+    
+    func subeScroll(){
+        miTabla?.reloadData()
+        let numberOfSections = self.miTabla?.numberOfSections
+        let numberOfRows = self.miTabla?.numberOfRows(inSection: numberOfSections!-1)
+        
+        let indexPath = IndexPath(row: numberOfRows!-1 , section: numberOfSections!-1)
+        
+        if(self.mensajes.count>0){
+            self.miTabla?.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        }
+        
+    }
+        
+        
+    func enviaMensaje(){
+        let miMensaje = self.textField?.text
+        self.textField?.text = ""
         self.lblDate?.text = "escribiendo..."
         
-        AI.sharedService.textRequest(textField.text ?? "").success {[weak self] (response) -> Void in
+        
+        self.mensajes.append(miMensaje!)
+        
+        
+        subeScroll()
+        
+        
+        AI.sharedService.textRequest(miMensaje ?? "").success {[weak self] (response) -> Void in
             self?.response = response
             //var result: QueryResponse!
             DispatchQueue.main.async { [weak self] in
                 
-               // if let sself = self {
-                  //  print(response.result.fulfillment?.speech)
-                    
                 let arrayID = response.result.fulfillment?.speech as NSString?
-                    
-                self?.lblRespuesta?.text = arrayID! as String
+                
+                
+                
+                self?.mensajes.append(arrayID! as String)
+                
+                // if let sself = self {
+                //  print(response.result.fulfillment?.speech)
+                
+                
                 self?.lblDate?.text = "en línea"
                 //}
                 
+                self?.subeScroll()
             }
             }.failure { (error) -> Void in
                 DispatchQueue.main.async {
@@ -81,6 +179,5 @@ class TextRequestViewController: UIViewController {
                     )
                 }
         }
-        
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		165F3B551FA3B81800489D1B /* macri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 165F3B541FA3B81800489D1B /* macri.jpg */; };
+		16B28E511FA6C5DB0028F26F /* MensajesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B28E501FA6C5DB0028F26F /* MensajesTableViewCell.swift */; };
 		16DBBC621FA40AFC00D8613D /* macrismo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DBBC611FA40AFC00D8613D /* macrismo.png */; };
 		587512351AC275280053EAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512341AC275280053EAA9 /* AppDelegate.swift */; };
 		5875123A1AC275280053EAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587512381AC275280053EAA9 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		165F3B541FA3B81800489D1B /* macri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = macri.jpg; sourceTree = "<group>"; };
+		16B28E501FA6C5DB0028F26F /* MensajesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesTableViewCell.swift; sourceTree = "<group>"; };
 		16DBBC611FA40AFC00D8613D /* macrismo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macrismo.png; sourceTree = "<group>"; };
 		1906B9D4961663E861BE6DAD /* Pods_ChatBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A6C6A9CC79E8131A26B40E /* Pods-ApiAIDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				165F3B541FA3B81800489D1B /* macri.jpg */,
 				16DBBC611FA40AFC00D8613D /* macrismo.png */,
 				587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */,
+				16B28E501FA6C5DB0028F26F /* MensajesTableViewCell.swift */,
 				587512381AC275280053EAA9 /* Main.storyboard */,
 				5875123B1AC275280053EAA9 /* Images.xcassets */,
 				5875123D1AC275280053EAA9 /* LaunchScreen.xib */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				587512351AC275280053EAA9 /* AppDelegate.swift in Sources */,
+				16B28E511FA6C5DB0028F26F /* MensajesTableViewCell.swift in Sources */,
 				587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
