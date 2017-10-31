@@ -103,7 +103,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0E3-Da-6gx" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="7" width="300" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxN-yD-xQf">
@@ -135,7 +135,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="txtMensaje" destination="7P2-61-tTw" id="4Mn-87-t4K"/>
-                                            <outlet property="viewBack" destination="fxN-yD-xQf" id="zau-gj-oML"/>
+                                            <outlet property="viewBack" destination="0E3-Da-6gx" id="o0a-67-OgE"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="Cnx-FF-bBq" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
@@ -147,7 +147,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oeP-XH-wNI" userLabel="burbuja" customClass="Bubles1" customModule="ChatBot" customModuleProvider="target">
                                                     <rect key="frame" x="55" y="5" width="300" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-nx-1tE">
@@ -179,7 +179,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="txtMensaje" destination="D2r-b9-ckA" id="r5L-bP-QE4"/>
-                                            <outlet property="viewBack" destination="fcm-nx-1tE" id="SR4-Br-zeD"/>
+                                            <outlet property="viewBack" destination="oeP-XH-wNI" id="km4-sp-k2N"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

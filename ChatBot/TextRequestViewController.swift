@@ -197,6 +197,17 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
             
+            let caracteres = mensajes[indexPath.row].count
+            
+            if(caracteres < 30){
+                
+                cell.viewBack.frame.size.width = CGFloat(caracteres * 10)
+                
+            }
+            else{
+                cell.viewBack.frame.size.width = 300
+            }
+            
       
             return cell
         case 1:
@@ -205,6 +216,19 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
             
+            
+            let caracteres = mensajes[indexPath.row].count
+            
+            if(caracteres < 30){
+                
+                cell.viewBack.frame.size.width = CGFloat(caracteres * 10)
+                
+            }
+            else{
+                cell.viewBack.frame.size.width = 300
+            }
+            
+            cell.viewBack.frame.origin.x = cell.frame.size.width - cell.viewBack.frame.size.width - 20
             
             return cell
         default:
