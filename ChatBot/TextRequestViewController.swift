@@ -92,6 +92,19 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         self.viewTexto.frame.origin.y = self.view.frame.size.height - self.viewTexto.frame.size.height
         self.miTabla?.frame.origin.y = 64
         self.miTabla?.frame.size.height = self.view.frame.size.height - self.viewTexto.frame.size.height - 64
+        
+        
+        let width: CGFloat = 240.0
+        let height: CGFloat = 160.0
+        
+        let demoView = Bubles(frame: CGRect(x: self.view.frame.size.width/2 - width/2,
+                                              y: self.view.frame.size.height/2 - height/2,
+                                              width: width,
+                                              height: height))
+        
+        self.view.addSubview(demoView)
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
