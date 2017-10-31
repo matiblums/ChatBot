@@ -92,18 +92,13 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         self.viewTexto.frame.origin.y = self.view.frame.size.height - self.viewTexto.frame.size.height
         self.miTabla?.frame.origin.y = 64
         self.miTabla?.frame.size.height = self.view.frame.size.height - self.viewTexto.frame.size.height - 64
+ 
         
         
-        let width: CGFloat = 240.0
-        let height: CGFloat = 160.0
+        self.miTabla?.dataSource = self
+        self.miTabla?.delegate = self
         
-        let demoView = Bubles(frame: CGRect(x: self.view.frame.size.width/2 - width/2,
-                                              y: self.view.frame.size.height/2 - height/2,
-                                              width: width,
-                                              height: height))
-        
-        self.view.addSubview(demoView)
-        
+        self.miTabla?.estimatedRowHeight = 200.0
         
     }
     
@@ -201,12 +196,26 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
+            
+            let demoView = Bubles(frame: CGRect(x: 5,
+                                                y: 5,
+                                                width: cell.txtMensaje.frame.size.width + 5,
+                                                height: cell.txtMensaje.frame.size.height + 5))
+            
+            cell.addSubview(demoView)
+            
+            
+            
             return cell
         case 1:
             let cellID = "Cell1"
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
+            
+           cell.updateConstraintsIfNeeded()
+            cell.setNeedsUpdateConstraints()
+            
             return cell
         default:
             break
@@ -214,6 +223,19 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+        
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -231,6 +253,20 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         //textField?.becomeFirstResponder()
     }
     
+    
+    
+    /*
+    -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+        return 44.0;
+    }
+    
+    -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+        return UITableViewAutomaticDimension;
+    
+    }
+    */
     @IBAction func sendText(_ sender: UIButton)
     {
        
