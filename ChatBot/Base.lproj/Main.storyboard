@@ -101,13 +101,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0E3-Da-6gx" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="7" width="300" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxN-yD-xQf">
                                                     <rect key="frame" x="20" y="0.0" width="285" height="44"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBP-P1-H4g" customClass="Bubles" customModule="ChatBot" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="5" width="275" height="34"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-61-tTw">
                                                             <rect key="frame" x="11" y="11" width="35" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -116,14 +117,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="KBP-P1-H4g" secondAttribute="trailing" constant="5" id="BQz-V7-Bzr"/>
-                                                        <constraint firstItem="KBP-P1-H4g" firstAttribute="leading" secondItem="fxN-yD-xQf" secondAttribute="leading" constant="5" id="DIu-bE-xfK"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7P2-61-tTw" secondAttribute="trailing" id="MQR-YV-8QK"/>
                                                         <constraint firstItem="7P2-61-tTw" firstAttribute="top" secondItem="fxN-yD-xQf" secondAttribute="top" constant="11" id="SxB-pE-ov1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="KBP-P1-H4g" secondAttribute="bottom" constant="5" id="XCf-DH-hh5"/>
                                                         <constraint firstAttribute="bottom" secondItem="7P2-61-tTw" secondAttribute="bottom" constant="11" id="cFx-dl-XF8"/>
                                                         <constraint firstItem="7P2-61-tTw" firstAttribute="leading" secondItem="fxN-yD-xQf" secondAttribute="leading" constant="11" id="rfA-qA-txO"/>
-                                                        <constraint firstItem="KBP-P1-H4g" firstAttribute="top" secondItem="fxN-yD-xQf" secondAttribute="top" constant="5" id="uA4-ja-ftq"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -138,6 +135,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="txtMensaje" destination="7P2-61-tTw" id="4Mn-87-t4K"/>
+                                            <outlet property="viewBack" destination="fxN-yD-xQf" id="zau-gj-oML"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="Cnx-FF-bBq" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
@@ -147,13 +145,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oeP-XH-wNI" userLabel="burbuja" customClass="Bubles1" customModule="ChatBot" customModuleProvider="target">
+                                                    <rect key="frame" x="55" y="5" width="300" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-nx-1tE">
                                                     <rect key="frame" x="70" y="0.0" width="285" height="44"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0F-rL-BaX" customClass="Bubles" customModule="ChatBot" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="5" width="275" height="34"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2r-b9-ckA">
                                                             <rect key="frame" x="239" y="11" width="35" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -163,12 +162,8 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="D2r-b9-ckA" secondAttribute="trailing" constant="11" id="4D5-kE-56z"/>
-                                                        <constraint firstItem="V0F-rL-BaX" firstAttribute="top" secondItem="fcm-nx-1tE" secondAttribute="top" constant="5" id="4yL-Ma-IAa"/>
-                                                        <constraint firstItem="V0F-rL-BaX" firstAttribute="leading" secondItem="fcm-nx-1tE" secondAttribute="leading" constant="5" id="E8H-tm-A1V"/>
                                                         <constraint firstItem="D2r-b9-ckA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fcm-nx-1tE" secondAttribute="leading" id="IQ5-HH-5yO"/>
                                                         <constraint firstItem="D2r-b9-ckA" firstAttribute="top" secondItem="fcm-nx-1tE" secondAttribute="top" constant="11" id="WkO-Nt-7rv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="V0F-rL-BaX" secondAttribute="bottom" constant="5" id="gbH-58-fQl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="V0F-rL-BaX" secondAttribute="trailing" constant="5" id="muE-hW-t9o"/>
                                                         <constraint firstAttribute="bottom" secondItem="D2r-b9-ckA" secondAttribute="bottom" constant="11" id="qdj-1S-OfX"/>
                                                     </constraints>
                                                 </view>
@@ -184,6 +179,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="txtMensaje" destination="D2r-b9-ckA" id="r5L-bP-QE4"/>
+                                            <outlet property="viewBack" destination="fcm-nx-1tE" id="SR4-Br-zeD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -224,7 +220,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="paI-fH-nzt">
                         <view key="titleView" contentMode="scaleToFill" id="sc7-1B-qeD">
-                            <rect key="frame" x="46" y="4.5" width="200" height="35"/>
+                            <rect key="frame" x="89.5" y="4.5" width="156.5" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-EU-YZu">

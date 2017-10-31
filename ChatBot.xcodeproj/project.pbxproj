@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1614C2271FA812480048B08D /* Bubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1614C2261FA812480048B08D /* Bubles.swift */; };
+		1614C2271FA812480048B08D /* Bubles1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1614C2261FA812480048B08D /* Bubles1.swift */; };
+		163CE3251FA8F063002BCF13 /* Bubles0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE3241FA8F062002BCF13 /* Bubles0.swift */; };
 		16B28E511FA6C5DB0028F26F /* MensajesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B28E501FA6C5DB0028F26F /* MensajesTableViewCell.swift */; };
 		16B28E531FA797A00028F26F /* ContactosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B28E521FA797A00028F26F /* ContactosTableViewController.swift */; };
 		16B28E551FA797B40028F26F /* ContactosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B28E541FA797B40028F26F /* ContactosTableViewCell.swift */; };
@@ -20,7 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1614C2261FA812480048B08D /* Bubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubles.swift; sourceTree = "<group>"; };
+		1614C2261FA812480048B08D /* Bubles1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubles1.swift; sourceTree = "<group>"; };
+		163CE3241FA8F062002BCF13 /* Bubles0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubles0.swift; sourceTree = "<group>"; };
 		16B28E501FA6C5DB0028F26F /* MensajesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesTableViewCell.swift; sourceTree = "<group>"; };
 		16B28E521FA797A00028F26F /* ContactosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosTableViewController.swift; sourceTree = "<group>"; };
 		16B28E541FA797B40028F26F /* ContactosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,7 +82,8 @@
 				5875123D1AC275280053EAA9 /* LaunchScreen.xib */,
 				5875123B1AC275280053EAA9 /* Images.xcassets */,
 				587512321AC275280053EAA9 /* Supporting Files */,
-				1614C2261FA812480048B08D /* Bubles.swift */,
+				163CE3241FA8F062002BCF13 /* Bubles0.swift */,
+				1614C2261FA812480048B08D /* Bubles1.swift */,
 			);
 			path = ChatBot;
 			sourceTree = "<group>";
@@ -238,7 +241,8 @@
 			files = (
 				587512351AC275280053EAA9 /* AppDelegate.swift in Sources */,
 				16B28E511FA6C5DB0028F26F /* MensajesTableViewCell.swift in Sources */,
-				1614C2271FA812480048B08D /* Bubles.swift in Sources */,
+				1614C2271FA812480048B08D /* Bubles1.swift in Sources */,
+				163CE3251FA8F063002BCF13 /* Bubles0.swift in Sources */,
 				16B28E531FA797A00028F26F /* ContactosTableViewController.swift in Sources */,
 				16B28E551FA797B40028F26F /* ContactosTableViewCell.swift in Sources */,
 				587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */,

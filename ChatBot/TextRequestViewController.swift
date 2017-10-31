@@ -196,16 +196,8 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
-            /*
-            let demoView = Bubles(frame: CGRect(x: 5,
-                                                y: 5,
-                                                width: cell.txtMensaje.frame.size.width + 5,
-                                                height: cell.txtMensaje.frame.size.height + 5))
             
-            cell.addSubview(demoView)
-            */
-            
-            
+      
             return cell
         case 1:
             let cellID = "Cell1"
@@ -213,8 +205,6 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
             
-           cell.updateConstraintsIfNeeded()
-            cell.setNeedsUpdateConstraints()
             
             return cell
         default:
@@ -255,8 +245,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     
     
  
-    @IBAction func sendText(_ sender: UIButton)
-    {
+    @IBAction func sendText(_ sender: UIButton){
        
         if(self.textField?.text != ""){
             enviaMensaje()
@@ -312,7 +301,15 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                 self?.subeScroll()
             }
             }.failure { (error) -> Void in
+                
+                self.mensajes.append("error")
+                self.mensajesCodigo.append(0)
+                
+                /*
+                
                 DispatchQueue.main.async {
+                    
+                    
                     let alert = UIAlertController(
                         title: "Error",
                         message: error.localizedDescription,
@@ -332,7 +329,14 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                         animated: true,
                         completion: .none
                     )
+ 
+ 
                 }
+ 
+             */
         }
+        
+        
     }
+    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Bubles: UIView {
+class Bubles1: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -40,7 +40,10 @@ class Bubles: UIView {
                           //  cornerRadii: CGSize(width: 15.0, height: 0.0))
         
         // Specify the fill color and apply it to the path.
-        UIColor.white.setFill()
+        
+        let color = UIColor(red: 0.863, green: 0.973, blue: 0.776, alpha: 1.000)
+        color.setFill()
+        //UIColor.blue.setFill()
         path.fill()
         
         
