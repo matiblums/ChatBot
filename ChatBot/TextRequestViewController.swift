@@ -196,14 +196,14 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
-            
+            /*
             let demoView = Bubles(frame: CGRect(x: 5,
                                                 y: 5,
                                                 width: cell.txtMensaje.frame.size.width + 5,
                                                 height: cell.txtMensaje.frame.size.height + 5))
             
             cell.addSubview(demoView)
-            
+            */
             
             
             return cell
