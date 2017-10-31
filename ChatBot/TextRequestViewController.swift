@@ -254,19 +254,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    
-    /*
-    -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-        return 44.0;
-    }
-    
-    -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-        return UITableViewAutomaticDimension;
-    
-    }
-    */
+ 
     @IBAction func sendText(_ sender: UIButton)
     {
        
@@ -277,6 +265,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func subeScroll(){
+        
         miTabla?.reloadData()
         let numberOfSections = self.miTabla?.numberOfSections
         let numberOfRows = self.miTabla?.numberOfRows(inSection: numberOfSections!-1)
