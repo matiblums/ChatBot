@@ -201,11 +201,15 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             if(caracteres < 30){
                 
-                cell.viewBack.frame.size.width = CGFloat(caracteres * 10)
+                let myString: String = mensajes[indexPath.row]
+                let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
+                
+                cell.viewBurbuja.frame.size.width = size.width + 20
+                
                 
             }
             else{
-                cell.viewBack.frame.size.width = 300
+                cell.viewBurbuja.frame.size.width = cell.viewBack.frame.size.width + 20
             }
             
       
@@ -216,19 +220,22 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
             
-            
             let caracteres = mensajes[indexPath.row].count
             
             if(caracteres < 30){
                 
-                cell.viewBack.frame.size.width = CGFloat(caracteres * 10)
+                let myString: String = mensajes[indexPath.row]
+                let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
+                
+                cell.viewBurbuja.frame.size.width = size.width + 25
+                
                 
             }
             else{
-                cell.viewBack.frame.size.width = 300
+                cell.viewBurbuja.frame.size.width = cell.viewBack.frame.size.width + 11
             }
             
-            cell.viewBack.frame.origin.x = cell.frame.size.width - cell.viewBack.frame.size.width - 20
+            cell.viewBurbuja.frame.origin.x = cell.frame.size.width - cell.viewBurbuja.frame.size.width - 20
             
             return cell
         default:

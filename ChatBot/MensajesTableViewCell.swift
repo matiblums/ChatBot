@@ -13,6 +13,7 @@ class MensajesTableViewCell: UITableViewCell {
     @IBOutlet weak var txtMensaje: UILabel!
     @IBOutlet weak var imgCheck: UIImageView!
     @IBOutlet weak var viewBack: UIView!
+    @IBOutlet weak var viewBurbuja: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
