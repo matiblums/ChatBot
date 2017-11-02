@@ -238,6 +238,18 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             cell.viewBurbuja.frame.origin.x = cell.frame.size.width - cell.viewBurbuja.frame.size.width - 20
             
             return cell
+        
+        case 2:
+            let cellID = "Cell2"
+            
+            let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
+            
+            cell.imgMensaje.image = UIImage(named:mensajes[indexPath.row])
+            
+            
+            
+            return cell
+            
         default:
             break
         }
@@ -279,7 +291,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func sendText(_ sender: UIButton){
        
         if(self.textField?.text != ""){
-            enviaMensaje()
+            enviaMensaje(mensaje: (self.textField?.text)!)
         }
         
     }
@@ -299,37 +311,61 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     }
         
         
-    func enviaMensaje(){
-        let miMensaje = self.textField?.text
+    func enviaMensaje(mensaje: String){
+        let miMensaje = mensaje
         self.textField?.text = ""
         self.lblHora?.text = "escribiendo..."
         
         
-        self.mensajes.append(miMensaje!)
+        self.mensajes.append(miMensaje)
         self.mensajesCodigo.append(1)
         
         subeScroll()
         
         
-        AI.sharedService.textRequest(miMensaje ?? "").success {[weak self] (response) -> Void in
+        AI.sharedService.textRequest(miMensaje).success {[weak self] (response) -> Void in
             self?.response = response
             //var result: QueryResponse!
             DispatchQueue.main.async { [weak self] in
                 
                 let arrayID = response.result.fulfillment?.speech as NSString?
+                //let arrayResolvedQuery = response.result.resolvedQuery as NSString?
                 
+                let numero = 4
                 
-                
-                self?.mensajes.append(arrayID! as String)
-                self?.mensajesCodigo.append(0)
-                // if let sself = self {
-                //  print(response.result.fulfillment?.speech)
-                
+                if((arrayID?.length)! > numero){
+                    let primerosTres = arrayID!.substring(to: numero)
+                    let sinPrimerosTres = arrayID!.substring(from: numero)
+                    
+                    if(primerosTres == "img:"){
+                        self?.mensajes.append(sinPrimerosTres as String)
+                        self?.mensajesCodigo.append(2)
+                        
+                        //self?.enviaMensaje(mensaje: arrayResolvedQuery! as String)
+                        
+                    }
+                    else if(primerosTres == "vid:"){
+                        
+                    }
+                    else if(primerosTres == "aud:"){
+                        
+                    }
+                    else{
+                        
+                        self?.mensajes.append(arrayID! as String)
+                        self?.mensajesCodigo.append(0)
+                        
+                    }
+                }
+                else{
+                    self?.mensajes.append(arrayID! as String)
+                    self?.mensajesCodigo.append(0)
+                }
+               
                 
                 self?.lblHora?.text = "en línea"
-                //}
-                
                 self?.subeScroll()
+                
             }
             }.failure { (error) -> Void in
                 

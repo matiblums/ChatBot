@@ -183,6 +183,43 @@
                                             <outlet property="viewBurbuja" destination="oeP-XH-wNI" id="i8p-zG-8mQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="200" id="WVp-2D-dU4" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="320" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WVp-2D-dU4" id="rpc-gU-0DP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6W-E9-x3f" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="5" width="253" height="189"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cristina" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-2s-pmZ">
+                                                            <rect key="frame" x="8" y="8" width="237" height="173"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Mf0-2s-pmZ" firstAttribute="leading" secondItem="f6W-E9-x3f" secondAttribute="leading" constant="8" id="OHD-jq-z9m"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Mf0-2s-pmZ" secondAttribute="trailing" constant="8" id="rXb-wQ-jDF"/>
+                                                        <constraint firstItem="Mf0-2s-pmZ" firstAttribute="top" secondItem="f6W-E9-x3f" secondAttribute="top" constant="8" id="rte-SN-8za"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Mf0-2s-pmZ" secondAttribute="bottom" constant="8" id="v9f-PY-sXG"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="f6W-E9-x3f" secondAttribute="trailing" constant="50" id="H3h-dx-2HS"/>
+                                                <constraint firstAttribute="bottom" secondItem="f6W-E9-x3f" secondAttribute="bottom" constant="6" id="Kt9-vT-AZq"/>
+                                                <constraint firstItem="f6W-E9-x3f" firstAttribute="top" secondItem="rpc-gU-0DP" secondAttribute="top" constant="5" id="bfv-ee-5Rz"/>
+                                                <constraint firstItem="f6W-E9-x3f" firstAttribute="leading" secondItem="rpc-gU-0DP" secondAttribute="leading" constant="17" id="sQy-o3-Bup"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="imgMensaje" destination="Mf0-2s-pmZ" id="BxG-XI-NXQ"/>
+                                            <outlet property="viewBurbuja" destination="f6W-E9-x3f" id="bP6-0F-MDJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="sdT-C0-cm1" id="d6a-hU-tzK"/>
@@ -460,6 +497,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cristina" width="930" height="525"/>
         <image name="ic_call_white_36pt" width="36" height="36"/>
         <image name="ic_photo_camera_white_36pt" width="36" height="36"/>
         <image name="ic_question_answer_white_36pt" width="36" height="36"/>
