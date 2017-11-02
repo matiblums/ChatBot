@@ -299,14 +299,16 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     func subeScroll(){
         
         miTabla?.reloadData()
-        let numberOfSections = self.miTabla?.numberOfSections
-        let numberOfRows = self.miTabla?.numberOfRows(inSection: numberOfSections!-1)
         
-        let indexPath = IndexPath(row: numberOfRows!-1 , section: numberOfSections!-1)
+        let numberOfRows = self.miTabla?.numberOfRows(inSection: 0)
+        
+        let indexPath = IndexPath(row: numberOfRows!-1 , section: 0)
         
         if(self.mensajes.count>0){
             self.miTabla?.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
         }
+        
+ 
         
     }
         
@@ -362,9 +364,13 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                     self?.mensajesCodigo.append(0)
                 }
                
+                let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                    // Your code with delay
+                    self?.lblHora?.text = "en línea"
+                    self?.subeScroll()
+                }
                 
-                self?.lblHora?.text = "en línea"
-                self?.subeScroll()
                 
             }
             }.failure { (error) -> Void in
