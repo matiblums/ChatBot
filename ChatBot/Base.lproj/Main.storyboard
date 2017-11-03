@@ -193,7 +193,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6W-E9-x3f" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="5" width="253" height="189"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cristina" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-2s-pmZ">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-2s-pmZ">
                                                             <rect key="frame" x="8" y="8" width="237" height="173"/>
                                                         </imageView>
                                                     </subviews>
@@ -497,7 +497,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cristina" width="930" height="525"/>
         <image name="ic_call_white_36pt" width="36" height="36"/>
         <image name="ic_photo_camera_white_36pt" width="36" height="36"/>
         <image name="ic_question_answer_white_36pt" width="36" height="36"/>
