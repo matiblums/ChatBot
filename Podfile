@@ -13,7 +13,8 @@ use_frameworks!
   #pod 'ApiAI/UIKit' #, :path => '../'
   #pod 'ApiAI/ResponseMapping' #, :path => '../'
   pod 'AI'
-  pod 'IQKeyboardManagerSwift'  
+  pod 'IQKeyboardManagerSwift'
+  pod 'MBProgressHUD'  
  
 end
 
