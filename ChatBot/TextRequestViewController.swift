@@ -196,7 +196,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
-            
+            /*
             let caracteres = mensajes[indexPath.row].count
             
             if(caracteres < 30){
@@ -211,7 +211,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             else{
                 cell.viewBurbuja.frame.size.width = cell.viewBack.frame.size.width + 20
             }
-            
+            */
       
             return cell
         case 1:
@@ -219,7 +219,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
             cell.txtMensaje.text = mensajes[indexPath.row]
-            
+            /*
             let caracteres = mensajes[indexPath.row].count
             
             if(caracteres < 30){
@@ -236,7 +236,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
             cell.viewBurbuja.frame.origin.x = cell.frame.size.width - cell.viewBurbuja.frame.size.width - 20
-            
+            */
             return cell
         
         case 2:
@@ -257,17 +257,17 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   // func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+     //   return UITableViewAutomaticDimension
         
-    }
+   // }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+   // func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+       // return UITableViewAutomaticDimension
         
-    }
+  //  }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -302,11 +302,18 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         
         let numberOfRows = self.miTabla?.numberOfRows(inSection: 0)
         
-        let indexPath = IndexPath(row: numberOfRows!-1 , section: 0)
+        let indexPath = IndexPath(row: mensajes.count-1 , section: 0)
         
         if(self.mensajes.count>0){
-            self.miTabla?.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+            //self.miTabla?.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            
+            DispatchQueue.main.async {
+                let index = IndexPath(row: self.mensajes.count-1, section: 0)
+                self.miTabla?.scrollToRow(at: index, at: .bottom, animated: true)
+            }
+            
         }
+        
         
  
         
