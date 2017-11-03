@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChatBot/TextRequestViewController.swift"
-            timestampString = "531426038.610296"
+            timestampString = "531428559.736268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
             landmarkName = "enviaMensaje(mensaje:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -257,11 +257,22 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-   // func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
+        
+        
         
      //   return UITableViewAutomaticDimension
         
-   // }
+        if(indexPath.section == 3){
+            return 100
+        }
+        else{
+            return UITableViewAutomaticDimension
+        }
+        
+    }
     
    // func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
