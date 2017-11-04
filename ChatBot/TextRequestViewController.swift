@@ -192,50 +192,18 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
         
         switch mensajesCodigo[indexPath.row] {
         case 0:
-            let cellID = "Cell0"
+            let cellID = "Cell00"
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
-            cell.txtMensaje.text = mensajes[indexPath.row]
-            
-            let caracteres = mensajes[indexPath.row].count
-            
-            if(caracteres < 30){
-                
-                let myString: String = mensajes[indexPath.row]
-                let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
-                
-                cell.viewBurbuja.frame.size.width = size.width + 20
-                
-                
-            }
-            else{
-                cell.viewBurbuja.frame.size.width = cell.viewBack.frame.size.width + 20
-            }
+            cell.txtMensaje.text = mensajes[indexPath.row] + "    "
             
       
             return cell
         case 1:
-            let cellID = "Cell1"
+            let cellID = "Cell11"
             
             let cell:MensajesTableViewCell = self.miTabla!.dequeueReusableCell(withIdentifier: cellID) as! MensajesTableViewCell
-            cell.txtMensaje.text = mensajes[indexPath.row]
-            
-            let caracteres = mensajes[indexPath.row].count
-            
-            if(caracteres < 30){
-                
-                let myString: String = mensajes[indexPath.row]
-                let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
-                
-                cell.viewBurbuja.frame.size.width = size.width + 25
-                
-                
-            }
-            else{
-                cell.viewBurbuja.frame.size.width = cell.viewBack.frame.size.width + 11
-            }
-            
-            cell.viewBurbuja.frame.origin.x = cell.frame.size.width - cell.viewBurbuja.frame.size.width - 20
+            cell.txtMensaje.text = mensajes[indexPath.row] + "    "
             
             return cell
         
@@ -259,18 +227,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        
-        
-        
-        
-     //   return UITableViewAutomaticDimension
-        
-        if(indexPath.section == 3){
-            return 100
-        }
-        else{
-            return UITableViewAutomaticDimension
-        }
+        return UITableViewAutomaticDimension
         
     }
     
@@ -382,7 +339,7 @@ class TextRequestViewController: UIViewController, UITableViewDelegate, UITableV
                     self?.mensajesCodigo.append(0)
                 }
                
-                let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+                let when = DispatchTime.now() + 0 // change 2 to desired number of seconds
                 DispatchQueue.main.asyncAfter(deadline: when) {
                     // Your code with delay
                     self?.lblHora?.text = "en línea"

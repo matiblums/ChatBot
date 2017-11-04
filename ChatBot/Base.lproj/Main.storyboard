@@ -183,18 +183,18 @@
                                             <outlet property="viewBurbuja" destination="oeP-XH-wNI" id="i8p-zG-8mQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="200" id="WVp-2D-dU4" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="320" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="40" id="WVp-2D-dU4" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WVp-2D-dU4" id="rpc-gU-0DP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6W-E9-x3f" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="5" width="253" height="189"/>
+                                                    <rect key="frame" x="17" y="5" width="253" height="29"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-2s-pmZ">
-                                                            <rect key="frame" x="8" y="8" width="237" height="173"/>
+                                                            <rect key="frame" x="8" y="8" width="237" height="13"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -218,6 +218,102 @@
                                         <connections>
                                             <outlet property="imgMensaje" destination="Mf0-2s-pmZ" id="BxG-XI-NXQ"/>
                                             <outlet property="viewBurbuja" destination="f6W-E9-x3f" id="bP6-0F-MDJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell00" id="WDT-tg-N2l" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDT-tg-N2l" id="7fi-U8-A4F">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG0-33-lkG">
+                                                    <rect key="frame" x="20" y="0.0" width="220" height="44"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R19-4l-iLl" userLabel="burbuja" customClass="Bubles0" customModule="ChatBot" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="5" width="17.5" height="33"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-4w-3Dm">
+                                                            <rect key="frame" x="10" y="11" width="17.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gtx-4w-3Dm" firstAttribute="leading" secondItem="yG0-33-lkG" secondAttribute="leading" constant="10" id="NtD-Tt-Sgu"/>
+                                                        <constraint firstItem="gtx-4w-3Dm" firstAttribute="top" secondItem="yG0-33-lkG" secondAttribute="top" constant="11" id="cxp-UG-DBq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gtx-4w-3Dm" secondAttribute="bottom" constant="11" id="hla-x1-NQR"/>
+                                                        <constraint firstItem="R19-4l-iLl" firstAttribute="leading" secondItem="yG0-33-lkG" secondAttribute="leading" id="lVM-Qm-Q8P"/>
+                                                        <constraint firstItem="gtx-4w-3Dm" firstAttribute="width" secondItem="R19-4l-iLl" secondAttribute="width" id="qaJ-U7-cOq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="R19-4l-iLl" secondAttribute="bottom" constant="6" id="rNl-WC-yea"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gtx-4w-3Dm" secondAttribute="trailing" id="tqH-r0-6nM"/>
+                                                        <constraint firstItem="R19-4l-iLl" firstAttribute="top" secondItem="yG0-33-lkG" secondAttribute="top" constant="5" id="yNq-rw-Kkz"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="yG0-33-lkG" secondAttribute="bottom" id="FAc-n7-9CX"/>
+                                                <constraint firstItem="yG0-33-lkG" firstAttribute="top" secondItem="7fi-U8-A4F" secondAttribute="top" id="FgH-BH-zRQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="yG0-33-lkG" secondAttribute="trailing" constant="80" id="Wym-HQ-hll"/>
+                                                <constraint firstItem="yG0-33-lkG" firstAttribute="leading" secondItem="7fi-U8-A4F" secondAttribute="leading" constant="20" id="gQP-bD-SQO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="txtMensaje" destination="gtx-4w-3Dm" id="Iz1-uk-xqS"/>
+                                            <outlet property="viewBack" destination="yG0-33-lkG" id="No8-WA-3zV"/>
+                                            <outlet property="viewBurbuja" destination="R19-4l-iLl" id="vgj-YQ-0RG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell11" id="sIN-PK-koT" customClass="MensajesTableViewCell" customModule="ChatBot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="200" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sIN-PK-koT" id="rm3-tA-6Qd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKS-ds-xf4">
+                                                    <rect key="frame" x="80" y="0.0" width="220" height="44"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j34-H8-BMW" userLabel="burbuja" customClass="Bubles1" customModule="ChatBot" customModuleProvider="target">
+                                                            <rect key="frame" x="202" y="6" width="17.5" height="33"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbJ-rg-Voa">
+                                                            <rect key="frame" x="192.5" y="12" width="17.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="j34-H8-BMW" firstAttribute="width" secondItem="YbJ-rg-Voa" secondAttribute="width" id="5qw-RT-lVV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="j34-H8-BMW" secondAttribute="bottom" constant="5" id="DaJ-PI-off"/>
+                                                        <constraint firstItem="j34-H8-BMW" firstAttribute="top" secondItem="SKS-ds-xf4" secondAttribute="top" constant="6" id="MZS-bq-fBh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j34-H8-BMW" secondAttribute="trailing" constant="0.5" id="N5X-cd-Tlw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YbJ-rg-Voa" secondAttribute="bottom" constant="10" id="Vrm-ho-onE"/>
+                                                        <constraint firstItem="YbJ-rg-Voa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SKS-ds-xf4" secondAttribute="leading" id="ghg-vY-TV9"/>
+                                                        <constraint firstItem="YbJ-rg-Voa" firstAttribute="top" secondItem="SKS-ds-xf4" secondAttribute="top" constant="12" id="kgL-1X-l8K"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YbJ-rg-Voa" secondAttribute="trailing" constant="10" id="td8-V8-ar4"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="SKS-ds-xf4" firstAttribute="leading" secondItem="rm3-tA-6Qd" secondAttribute="leading" constant="80" id="GPF-TW-kd5"/>
+                                                <constraint firstAttribute="trailing" secondItem="SKS-ds-xf4" secondAttribute="trailing" constant="20" id="NVO-bq-ixR"/>
+                                                <constraint firstAttribute="bottom" secondItem="SKS-ds-xf4" secondAttribute="bottom" id="Qk0-bg-EUX"/>
+                                                <constraint firstItem="SKS-ds-xf4" firstAttribute="top" secondItem="rm3-tA-6Qd" secondAttribute="top" id="v3d-hf-qnm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="txtMensaje" destination="YbJ-rg-Voa" id="X9Q-FA-Lef"/>
+                                            <outlet property="viewBack" destination="SKS-ds-xf4" id="SFu-8D-qBh"/>
+                                            <outlet property="viewBurbuja" destination="j34-H8-BMW" id="7zl-nS-61p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
